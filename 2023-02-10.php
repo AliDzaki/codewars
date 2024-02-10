@@ -8,7 +8,7 @@
 // solusi:
 function move($pos, $roll)
 {
-    return $pos + ($roll * 2);
+  return $pos + ($roll * 2);
 }
 move(0, 9);
 
@@ -21,8 +21,8 @@ move(0, 9);
 // solusi:
 function twoSort($s)
 {
-    sort($s);
-    return implode("***", str_split($s[0]));
+  sort($s);
+  return implode("***", str_split($s[0]));
 }
 
 // kata 3
@@ -37,14 +37,15 @@ function twoSort($s)
 // Happy Coding!
 
 // solusi:
-function square_digits($num): int {
-    $arr = str_split($num);
-    $result = 0;
-    foreach($arr as $num){
-      $result .= pow($num, 2);
-    }
-    return $result;
+function square_digits($num): int
+{
+  $arr = str_split($num);
+  $result = 0;
+  foreach ($arr as $num) {
+    $result .= pow($num, 2);
   }
+  return $result;
+}
 
 // kata 4
 // Deoxyribonucleic acid (DNA) is a chemical found in the nucleus of cells and carries the "instructions" for the development and functioning of living organisms.
@@ -55,27 +56,53 @@ function square_digits($num): int {
 
 // More similar exercise are found here:
 // solusi:
-function DNA_strand($dna) {
-    $arr = str_split($dna);
-    $result ="";
-    foreach($arr as $string){
-      switch($string){
-          case "A":
-          $result .= "T";
-          break;
-          case "T":
-          $result .= "A";
-          break;
-          case "C":
-          $result .= "G";
-          break;
-          case "G":
-          $result .= "C";
-          break;
-          default:
-          $result .= "";
-      }
-      
+function DNA_strand($dna)
+{
+  $arr = str_split($dna);
+  $result = "";
+  foreach ($arr as $string) {
+    switch ($string) {
+      case "A":
+        $result .= "T";
+        break;
+      case "T":
+        $result .= "A";
+        break;
+      case "C":
+        $result .= "G";
+        break;
+      case "G":
+        $result .= "C";
+        break;
+      default:
+        $result .= "";
     }
-    return $result;
+
   }
+  return $result;
+}
+
+// kata 5
+//   Write a function that takes a list of strings as an argument and returns a filtered list containing the same elements but with the 'geese' removed.
+
+// The geese are any strings in the following array, which is pre-populated in your solution:
+
+//   ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"]
+// For example, if this array were passed as an argument:
+
+//  ["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]
+// Your function would return the following array:
+
+// ["Mallard", "Hook Bill", "Crested", "Blue Swedish"]
+// The elements in the returned array should be in the same order as in the initial array passed to your function, albeit with the 'geese' removed. Note that all of the strings will be in the same case as those provided, and some elements may be repeated.
+// solusi :
+function gooseFilter($birds) {
+  $geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+  $filtered = [];
+  foreach($birds as $bird){
+    if(!in_array($bird, $geese)){
+      $filtered[] = $bird;
+    }
+  }
+  return $filtered;
+}
