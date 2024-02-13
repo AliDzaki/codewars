@@ -17,3 +17,21 @@ function series_sum($n)
     }
     return strval(number_format($sum, 2, '.', ''));
 }
+
+// kata 2
+// Your task is to construct a building which will be a pile of n cubes. The cube at the bottom will have a volume of 
+// link : https://www.codewars.com/kata/5592e3bd57b64d00f3000047
+// solusi :
+function findNb($m) {
+    $angka = 0;
+      while($m > 0){
+        $angka++;
+        $kubus = pow($angka,3);
+        $m -= $kubus;  
+      }
+    if($m < 0){
+      return -1;
+    }
+    return $angka;
+  }
+
